@@ -9,7 +9,7 @@
 		"dev:be": "nodemon --watch './be-src/index.ts' --exec ts-node ./be-src/index.ts",
 		"build:be": "tsc",
 		"build:api": "tsc ./be-src/index.ts ",
-		"start:api": " node ./dist/backend-output.js",
+		"start:api": " node ./dist/bundle.js",
 		"build": "cross-env NODE_ENV=production webpack",
 		"dev": "cross-env NODE_ENV=development webpack",
 		"start": "live-server"
@@ -55,5 +55,6 @@
 		"@types/react-dom": "^17.0.11",
 		"webpack": "^5.64.1",
 		"webpack-cli": "^4.9.1"
+		
 	}
 }
