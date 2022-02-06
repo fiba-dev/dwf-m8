@@ -1,0 +1,26 @@
+.contentInput {
+  display: flex;
+  flex-direction: column;
+  font-family: "Indie Flower";
+  font-size: 30px;
+  height: 87px;
+  width: 335px;
+  align-items: flex-start;
+
+  text-align: center;
+  border: solid 3px;
+  color: black;
+  background-color: white;
+  border-color: rgba(241, 196, 255);
+
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1080px) {
+  .contentInput {
+    background-color: white;
+  }
+}

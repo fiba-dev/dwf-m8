@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("http://127.0.0.1:3003/fe-src/components/img/png3.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  height: 88vh;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

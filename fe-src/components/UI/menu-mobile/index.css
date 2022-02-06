@@ -1,0 +1,32 @@
+.ventana {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 1;
+  background-image: url("http://127.0.0.1:3003/fe-src/components/img/png.png");
+
+  background-repeat: no-repeat;
+
+  background-size: contain;
+  background-color: white;
+  padding-top: 58px;
+  align-items: center;
+  justify-content: center;
+}
+.email {
+  font-size: 15px;
+  font-family: "Indie Flower";
+  font-weight: 700;
+  color: black;
+  margin-right: 5px;
+}
+.cerrar__sesion {
+  color: red;
+  text-decoration-line: underline;
+  font-family: "Indie Flower";
+  font-size: 15px;
+}

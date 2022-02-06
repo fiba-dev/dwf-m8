@@ -1,0 +1,28 @@
+.input {
+  font-family: "Indie Flower";
+  font-size: 30px;
+  height: 60px;
+  width: 320px;
+  text-align: center;
+  background: #ffffff;
+  border: 2px solid;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.button {
+  font-family: "Indie Flower";
+  background: rgb(241, 196, 255);
+  border-radius: 5px;
+  width: 320px;
+  height: 50px;
+  font-size: 30px;
+}
+.button:hover {
+  background-color: rgba(44, 36, 219);
+  color: white;
+}
+.search__form {
+  display: flex;
+  flex-direction: column;
+}

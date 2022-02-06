@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  align-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+}
+.icon {
+  background-color: rgba(241, 196, 255, 0.288);
+  border: none;
+}
+
+@media (min-width: 1180px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    min-width: 375px;
+    align-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 40px;
+    background-color: white;
+  }
+
+  .icon {
+    background-color: none;
+    border: none;
+  }
+}

@@ -1,0 +1,103 @@
+.boton {
+  font-family: "Indie Flower";
+
+  background: rgba(255, 157, 245, 1);
+  border-radius: 5px;
+  width: 320px;
+  height: 50px;
+  font-size: 30px;
+  margin-top: 30px;
+}
+.boton:hover {
+  background-color: rgba(184, 47, 236);
+  color: white;
+}
+.cancel__button {
+  font-family: "Indie Flower";
+
+  background: #cdcdcd;
+
+  border-radius: 5px;
+  width: 320px;
+  height: 50px;
+  font-size: 30px;
+  margin-top: 30px;
+}
+.cancel__button:hover {
+  background-color: rgba(124, 124, 124);
+  color: white;
+}
+.session {
+  background-color: rgba(184, 47, 236);
+  color: rgba(255, 157, 245, 1);
+  width: 130px;
+
+  font-family: "Indie Flower";
+  border-radius: 5px;
+}
+.session:hover {
+  background: rgba(255, 157, 245, 1);
+  color: rgba(184, 47, 236);
+}
+
+.button__menu {
+  border: none;
+  color: black;
+
+  background-color: rgba(241, 196, 255, 0);
+  font-family: "Indie Flower";
+  height: 60px;
+  width: 100px;
+  font-size: 40px;
+  margin-top: 10px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+.button__menu:hover {
+  color: black;
+  background-color: rgba(255, 157, 245);
+}
+.close__menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 60px;
+  width: 50px;
+  height: 50px;
+  background: none;
+  color: black;
+  border: none;
+  font-family: "Indie Flower";
+}
+.close__menu:hover {
+  color: red;
+}
+
+.unpublish {
+  color: red;
+  border: none;
+  background: none;
+  font-size: 20px;
+  font-family: "Indie Flower";
+  text-decoration: underline;
+}
+.found {
+  font-family: "Indie Flower";
+
+  background: rgba(151, 234, 159);
+  border-radius: 5px;
+  width: 320px;
+  height: 50px;
+  font-size: 20px;
+  margin-top: 30px;
+}
+.found:hover {
+  background-color: rgba(184, 47, 236);
+  color: white;
+}
+
+@media (min-width: 1180px) {
+  .button__menu {
+    display: none;
+  }
+}

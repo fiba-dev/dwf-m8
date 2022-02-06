@@ -1,0 +1,34 @@
+.menu {
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+  align-items: center;
+  display: none;
+}
+.cerrar__sesion {
+  color: red;
+  text-decoration-line: underline;
+  font-family: "Indie Flower";
+  font-size: 20px;
+}
+.div__email {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+.email {
+  font-size: 15px;
+  font-family: "Indie Flower";
+  font-weight: 700;
+  color: black;
+  height: 15px;
+}
+@media (min-width: 1180px) {
+  .menu {
+    display: flex;
+  }
+  .div__email {
+    width: 150px;
+  }
+}

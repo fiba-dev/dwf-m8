@@ -1,0 +1,8 @@
+.git
+sendgrid.env
+cloudinary.env
+algolia.env
+dist
+.parcel-cache
+node_modules
+.env

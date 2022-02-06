@@ -1,0 +1,18 @@
+.ventana {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0vh;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  padding-top: 58px;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("http://127.0.0.1:3003/fe-src/components/img/png.png");
+
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+}

@@ -1,0 +1,13 @@
+.picture {
+  max-height: 160px;
+  max-width: 335px;
+}
+
+.container {
+  max-height: 160px;
+  max-width: 335px;
+  align-items: center;
+
+  display: flex;
+  flex-direction: column;
+}

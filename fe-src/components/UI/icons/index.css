@@ -1,0 +1,60 @@
+.header__logo {
+  background-image: url("http://127.0.0.1:3003/fe-src/components/img/marker.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  font-family: "Indie Flower";
+  border-radius: 5px;
+  border: none;
+  margin-left: 17px;
+  background-color: white;
+}
+.header__logo:hover {
+  border-radius: 5px;
+
+  background-image: url("http://127.0.0.1:3003/fe-src/components/img/marker.png");
+  background-color: rgba(255, 157, 245);
+}
+.icon__mobile {
+  color: black;
+  text-align: center;
+  border: solid;
+  border-radius: 5px;
+
+  font-size: 40px;
+  font-family: "Indie Flower";
+  text-decoration: none;
+  background-color: rgb(241, 196, 255);
+
+  margin-bottom: 10px;
+}
+.icon__mobile:hover {
+  color: rgba(255, 157, 245);
+  background-color: black;
+}
+.icon__desktop {
+  display: none;
+  text-decoration: none;
+  border: none;
+  background: none;
+}
+@media (min-width: 1080px) {
+  .icon__desktop {
+    display: flex;
+    font-size: 36px;
+    font-family: "Indie Flower";
+    font-weight: 700;
+    color: rgba(255, 157, 245);
+    background-color: white;
+    margin-right: 25px;
+    text-decoration: none;
+  }
+  .icon__desktop:hover {
+    color: black;
+  }
+  .header__logo {
+    background-color: white;
+  }
+}

@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow: scroll;
+}
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 60vh;
+}
+@media (min-width: 1080px) {
+  .cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 1200px;
+    max-height: 60vh;
+  }
+}
+@media (min-width: 1700px) {
+  .container {
+    background-image: url("http://127.0.0.1:3003/fe-src/components/img/png4.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    overflow: scroll;
+    height: 88vh;
+  }
+}

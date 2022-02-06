@@ -1,0 +1,40 @@
+.title {
+  font-family: "Indie Flower";
+  font-size: 40px;
+  color: black;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0em;
+  overflow: hidden;
+  text-align: center;
+  margin: 0px;
+}
+.title2 {
+  font-family: "Indie Flower";
+  font-size: 40px;
+  color: black;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0em;
+  overflow: hidden;
+  text-align: center;
+  margin: 0px;
+}
+.subTitle {
+  font-family: "Indie Flower";
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0em;
+  overflow: hidden;
+  text-align: center;
+  max-width: 320px;
+}
+@media (min-width: 1080px) {
+  .title {
+    font-size: 65px;
+  }
+  .subTitle {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
