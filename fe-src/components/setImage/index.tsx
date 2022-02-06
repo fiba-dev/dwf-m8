@@ -59,7 +59,8 @@ function DropboxImage(props) {
   if (props.children) {
     archivo = props.children;
   } else {
-    archivo = "http://127.0.0.1:3003/fe-src/components/img/picture.png";
+    archivo =
+      "https://res.cloudinary.com/fiba06-dev/image/upload/v1644189086/dwf-m8/picture_vbjmwt.png";
   }
 
   const [files, setFilesPreview] = useState(archivo);

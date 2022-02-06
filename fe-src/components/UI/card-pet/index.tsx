@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import { Title, Subtitle } from "../text";
 import { ImagePreview } from "../imagePreview";
 
-let pictureURL = "http://127.0.0.1:3003/fe-src/components/img/picture.png";
-let lapizURL = "http://127.0.0.1:3003/fe-src/components/img/lapiz.png";
+let pictureURL =
+  "https://res.cloudinary.com/fiba06-dev/image/upload/v1644189086/dwf-m8/picture_vbjmwt.png";
+let lapizURL =
+  "https://res.cloudinary.com/fiba06-dev/image/upload/v1644189278/dwf-m8/lapiz_qyyu1q.png";
 const handlerClick = (e) => {
   e.preventDefault();
   console.log("soy click de imagen");

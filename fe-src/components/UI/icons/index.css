@@ -1,5 +1,5 @@
 .header__logo {
-  background-image: url("http://127.0.0.1:3003/fe-src/components/img/marker.png");
+  background-image: url("https://res.cloudinary.com/fiba06-dev/image/upload/v1644189173/dwf-m8/marker_rr7zgk.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -14,7 +14,7 @@
 .header__logo:hover {
   border-radius: 5px;
 
-  background-image: url("http://127.0.0.1:3003/fe-src/components/img/marker.png");
+  background-image: url("https://res.cloudinary.com/fiba06-dev/image/upload/v1644189173/dwf-m8/marker_rr7zgk.png");
   background-color: rgba(255, 157, 245);
 }
 .icon__mobile {

@@ -22,7 +22,7 @@
 }
 @media (min-width: 1700px) {
   .container {
-    background-image: url("http://127.0.0.1:3003/fe-src/components/img/png4.png");
+    background-image: url("https://res.cloudinary.com/fiba06-dev/image/upload/v1644163599/dwf-m8/png4_qazbnw.png");
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
