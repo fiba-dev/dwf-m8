@@ -30,6 +30,7 @@ function InputPassword(props) {
     if (result == true) {
       getPassword(user).then((res) => {
         window.alert("Se envio un correo con su contraseña");
+        setUser({ email: "", token: "", password: "" });
         navigate("/");
       });
     }

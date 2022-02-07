@@ -8,7 +8,7 @@ import {
   useSetRecoilState,
   RecoilState,
 } from "recoil";
-import { Navigate, useParams } from "react-router-dom";
+import { API_URL } from "./apiURL";
 
 export const useUserData = () => useRecoilState(userState);
 
@@ -47,7 +47,7 @@ const verifyEmail = selector({
     if (user.email) {
       console.log("ENTRE AL QUERY DEL IF");
 
-      const res = await fetch("/email?email=" + user.email);
+      const res = await fetch(API_URL+"/email?email=" + user.email);
       const data = await res.json();
       console.log("soy return data", data);
 
@@ -75,7 +75,7 @@ export function useVerifyEmail(params) {
 export async function useVerifyPassword(params) {
   const [user, setUser] = useRecoilState(userState);
   if (params) {
-    const res = await fetch("/auth/token", {
+    const res = await fetch(API_URL+"/auth/token", {
       method: "post",
       headers: {
         "content-type": "application/json",
@@ -108,7 +108,7 @@ export async function reportPet(params) {
 
   console.log("loc", params.loc[0], params.loc[1]);
 
-  const resultado = await fetch("/user/report", {
+  const resultado = await fetch(API_URL+"/user/report", {
     method: "post",
     headers: {
       "content-type": "application/json",
@@ -130,7 +130,7 @@ export async function reportPet(params) {
 }
 //ENVIA UN EMAIL PARA RESTAURAR TU CONTRASEÑA
 export async function getPassword(params) {
-  const resultado = await fetch("/user/password" + "?email=" + params.email, {
+  const resultado = await fetch(API_URL+"/user/password" + "?email=" + params.email, {
     headers: {
       "content-type": "application/json",
     },
@@ -146,7 +146,7 @@ export async function getReportedPets(params) {
   console.log("soy user");
 
   const token = "bearer " + user.token;
-  const resultado = await fetch("/me/reported?email=" + user.email, {
+  const resultado = await fetch(API_URL+"/me/reported?email=" + user.email, {
     headers: {
       authorization: token,
     },
@@ -160,7 +160,7 @@ export async function getReportedPets(params) {
 export async function deletePet(params) {
   const user = JSON.parse(localStorage.getItem("user"));
   const token = "bearer " + user.token;
-  const res = await fetch("/user/pet?id=" + params.id, {
+  const res = await fetch(API_URL+"/user/pet?id=" + params.id, {
     method: "delete",
     headers: {
       authorization: token,
@@ -176,7 +176,7 @@ export async function createUser(params) {
   const [user, setUser] = useRecoilState(userState);
   if (user.email && params.password) {
     console.log("ENTRE AL QUERY DEL if del create user", params);
-    const res = await fetch("/auth", {
+    const res = await fetch(API_URL+"/auth", {
       method: "post",
       headers: {
         "content-type": "application/json",
@@ -207,7 +207,7 @@ export async function editUser(params) {
     console.log("entre al if de edit", user, params);
     const token = "bearer " + user.token;
 
-    const res = await fetch("/user/edit", {
+    const res = await fetch(API_URL+"/user/edit", {
       method: "post",
       headers: {
         "content-type": "application/json",
@@ -230,7 +230,7 @@ export async function editPet(params) {
   const user = JSON.parse(localStorage.getItem("user"));
   console.log("soy edit pet", params, user);
   const token = "bearer " + user.token;
-  const res = await fetch("/pet/edit", {
+  const res = await fetch(API_URL+"/pet/edit", {
     method: "post",
     headers: {
       "content-type": "application/json",
@@ -254,7 +254,7 @@ export async function editPet(params) {
 }
 //ENVIA EMAIL CON LA INFORMACION DE DONDE VIERON LA MASCOTA 
 export async function petInfo(params) {
-  const res = await fetch("/user/report-info", {
+  const res = await fetch(API_URL+ "/user/report-info", {
     method: "post",
     headers: {
       "content-type": "application/json",
@@ -277,7 +277,7 @@ export async function petCercanas(params) {
   console.log("YO SOY LOC", params);
 
   if (params != undefined) {
-    const res = await fetch(
+    const res = await fetch(API_URL+
       "/pets-cerca-de" + "?lat=" + params[0] + "&lng=" + params[1],
       {
         headers: {
