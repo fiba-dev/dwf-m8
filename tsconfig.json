@@ -9,5 +9,5 @@
 		"moduleResolution": "node"
 	},
 	
-	"include": ["./fe-src/**/*.*","./be-src/**/*.*"]
+	"include": ["./src/**/*.*"]
 }

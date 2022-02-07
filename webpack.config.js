@@ -9,7 +9,7 @@ if (dev) {
 }
 module.exports = {
 	watch: dev,
-	entry: "./fe-src/index.tsx",
+	entry: "./src/index.tsx",
 	module: {
 		rules: [
 			{
