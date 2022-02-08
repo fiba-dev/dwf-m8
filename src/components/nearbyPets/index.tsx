@@ -60,6 +60,8 @@ function NearbyPets(props) {
     const donde = e.target.donde.value;
     petInfo({ name, telefono, id: petId, donde }).then((res) => {
       console.log("Soy res depet info", res);
+      setInfoWindows(!infoWindows);
+      navigate("/");
     });
   };
 
