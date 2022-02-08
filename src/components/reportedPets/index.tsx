@@ -1,14 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import css from "./index.css";
-import { useDropzone } from "react-dropzone";
 import { Title, Subtitle } from "../ui/text";
 import { ImagePreview } from "../ui/imagePreview";
 import { MyReportedPets } from "../ui/card-pet";
-import { TextField } from "../ui/text-field";
-import { Map } from "../map";
-import { DropboxImage } from "../setImage";
-import { Button, CancelButton } from "../ui/buttons";
-import { usePetData, getReportedPets, useReportedPets } from "../../hooks";
+import { usePetData, useReportedPets } from "../../hooks";
 import { Navigate, useNavigate } from "react-router-dom";
 
 function ReportedPets(props) {
@@ -19,13 +14,10 @@ function ReportedPets(props) {
   let [pet, setPet] = usePetData();
 
   const editPet = (e) => {
-    console.log("soy edit pet", e.target.id);
     resultado.map((r) => {
       if (r.id == e.target.id) {
-        console.log("ENTRE AL IF");
         setPet(r);
         localStorage.setItem("petData", JSON.stringify(r));
-
         navigate("/edit-pet");
       }
     });
@@ -34,9 +26,7 @@ function ReportedPets(props) {
   const [picture, setPicture] = useState("");
   function preview(e) {
     e.preventDefault();
-    console.log("soy e de re[orted", e.target.src);
     setPicture(e.target.src);
-
     setStateWindows(!stateWindows);
   }
 

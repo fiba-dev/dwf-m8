@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { TextField } from "../ui/text-field";
 import { Title } from "../ui/text";
 import { Button, UnpublishButton } from "../ui/buttons";
@@ -23,7 +23,7 @@ function InputPassword(props) {
 
   const handlerNewPassword = async (res) => {
     res.preventDefault();
-    console.log("soy recuperar password", user);
+
     let result = window.confirm(
       `Desea Recibir una nueva contraseña en su Email:${user.email}?`
     );
@@ -38,7 +38,7 @@ function InputPassword(props) {
 
   const handlerPassword = async (e) => {
     e.preventDefault();
-    console.log("soy password", e.target.password.value);
+
     setPassword(e.target.password.value);
   };
   return (

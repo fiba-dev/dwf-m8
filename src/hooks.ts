@@ -1,5 +1,5 @@
 import react from "react";
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import {
   atom,
   useRecoilState,
@@ -41,16 +41,9 @@ const verifyEmail = selector({
   key: "emailCheck",
   get: async ({ get }) => {
     const user = get(userState);
-
-    console.log("SOY VALOR DE QUERY en email", user);
-
     if (user.email) {
-      console.log("ENTRE AL QUERY DEL IF");
-
       const res = await fetch(API_URL+"/email?email=" + user.email);
       const data = await res.json();
-      console.log("soy return data", data);
-
       return data;
     } else return null;
   },
@@ -85,10 +78,7 @@ export async function useVerifyPassword(params) {
         password: params,
       }),
     });
-
     const data = await res.json();
-
-    console.log("soy data antes de salir", data);
     const usuario = { email: user.email, token: data.token, password: params };
     localStorage.setItem("user", JSON.stringify(usuario));
 
@@ -101,13 +91,6 @@ export async function useVerifyPassword(params) {
 export async function reportPet(params) {
   const user = JSON.parse(localStorage.getItem("user"));
   const token = "bearer " + user.token;
-  console.log("soy pet y estos son los params", params);
-  console.log("y este es user", user);
-  console.log("yo soy el token", user.token);
-  console.log("soy imgagen", params.imagen);
-
-  console.log("loc", params.loc[0], params.loc[1]);
-
   const resultado = await fetch(API_URL+"/user/report", {
     method: "post",
     headers: {
@@ -124,8 +107,6 @@ export async function reportPet(params) {
   });
 
   const data = await resultado.json();
-  console.log("soy data de report pet", data);
-
   return data;
 }
 //ENVIA UN EMAIL PARA RESTAURAR TU CONTRASEÑA
@@ -143,8 +124,6 @@ export async function getPassword(params) {
 //OBTIENE LAS MASCOTAS REPORTADAS POR EL USUARIO
 export async function getReportedPets(params) {
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log("soy user");
-
   const token = "bearer " + user.token;
   const resultado = await fetch(API_URL+"/me/reported?email=" + user.email, {
     headers: {
@@ -152,8 +131,6 @@ export async function getReportedPets(params) {
     },
   });
   const data = await resultado.json();
-  console.log("soy data de pets", data);
-
   return data;
 }
 //ELIMINA LA MASCOTA REPORTADA POR EL USUARIO
@@ -175,7 +152,6 @@ export async function deletePet(params) {
 export async function createUser(params) {
   const [user, setUser] = useRecoilState(userState);
   if (user.email && params.password) {
-    console.log("ENTRE AL QUERY DEL if del create user", params);
     const res = await fetch(API_URL+"/auth", {
       method: "post",
       headers: {
@@ -188,25 +164,17 @@ export async function createUser(params) {
       }),
     });
     const data = await res.json();
-
-    console.log("DATA ", data);
     setUser({ email: "", token: "", password: "" });
     return data;
   } else {
-    console.log("no hay user.email", user);
+    throw "no hay user.email";
   }
 }
 //EDITA NOMBRE Y CONTRASEÑA DEL USUARIO
 export async function editUser(params) {
-  console.log("soy params de edituser antes de entrar", params);
-
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log("soy user del edituser", user);
-
   if (params.fullName && params.password) {
-    console.log("entre al if de edit", user, params);
     const token = "bearer " + user.token;
-
     const res = await fetch(API_URL+"/user/edit", {
       method: "post",
       headers: {
@@ -222,13 +190,12 @@ export async function editUser(params) {
     const data = await res.json();
     return data;
   } else {
-    return console.log("no entre en el fecth del edituser");
+    throw "no entre en el fecth del edituser";
   }
 }
 //EDITA LA MASCOTA REPORTADA POR EL USUARIO
 export async function editPet(params) {
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log("soy edit pet", params, user);
   const token = "bearer " + user.token;
   const res = await fetch(API_URL+"/pet/edit", {
     method: "post",
@@ -238,7 +205,6 @@ export async function editPet(params) {
     },
     body: JSON.stringify({
       id: params.id,
-
       name: params.petName,
       loc: params.loc,
       search: params.search,
@@ -274,8 +240,6 @@ export async function petInfo(params) {
 }
 //OBTIENE LAS MASCOTAS REPORTADAS CERCANAS AL USUARIO
 export async function petCercanas(params) {
-  console.log("YO SOY LOC", params);
-
   if (params != undefined) {
     const res = await fetch(API_URL+
       "/pets-cerca-de" + "?lat=" + params[0] + "&lng=" + params[1],
@@ -287,9 +251,6 @@ export async function petCercanas(params) {
     );
 
     const data = await res.json();
-
-    console.log("Soy data de pet cercanas", data);
-
     return data;
   } else {
     throw "No Hay ubicacion";

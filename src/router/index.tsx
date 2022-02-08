@@ -6,9 +6,7 @@ import { LoginEmail } from "../pages/LoginEmail";
 import { MisDatos } from "../pages/MisDatosPage";
 import { ReportedPets } from "../components/reportedPets";
 import { ReportedPetsPage } from "../pages/ReportedPetsPage";
-
 import { LoginPassword } from "../pages/LoginPassword";
-import { UserForm } from "../components/UserForm";
 import { EditPet } from "../components/editPet";
 import { ReportPetPage } from "../pages/ReportPetPage";
 

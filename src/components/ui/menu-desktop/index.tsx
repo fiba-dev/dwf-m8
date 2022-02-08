@@ -1,8 +1,8 @@
 import React from "react";
 import { IconDesktop } from "../icons";
 import css from "./index.css";
-import { Link, useNavigate } from "react-router-dom";
-import { Button, SessionButton } from "../buttons";
+import { useNavigate } from "react-router-dom";
+import { SessionButton } from "../buttons";
 import { useUserData, getReportedPets, useReportedPets } from "../../../hooks";
 
 function DesktopMenu() {
@@ -11,9 +11,7 @@ function DesktopMenu() {
   const navigate = useNavigate();
   let login = "";
   let email = "";
-  let handlerLogin = "";
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log("USER DEL HEADER", user);
 
   if (user) {
     if (user.token != null && user.email != "") {
@@ -30,19 +28,15 @@ function DesktopMenu() {
   const handlerSession = () => {
     if (user) {
       if (user.token && user.email) {
-        console.log("borrando localstorage");
         localStorage.removeItem("user");
         setuserData({ email: "", token: "", password: "" });
 
         navigate("/");
       } else {
-        console.log("ENTRE EN EL PRIMER ELSE");
-
         navigate("/login/email");
       }
     } else {
       navigate("/login/email");
-      console.log("EN EL SEGUNDO ELSE");
     }
   };
   const reportedPet = () => {

@@ -1,15 +1,9 @@
 import React from "react";
-import { CloseButton, SessionButton } from "../buttons";
-import { IconMobile } from "../icons";
+import { CloseButton } from "../buttons";
 import css from "./index.css";
 import { useNavigate } from "react-router-dom";
-import { useUserData } from "../../../hooks";
 
 function ImagePreview(props) {
-  const navigate = useNavigate();
-
-  console.log("Soy el estadp de imagenesu", props);
-
   return (
     <>
       {" "}

@@ -5,7 +5,6 @@ import { Button } from "../ui/buttons";
 import css from "./index.css";
 import { createUser, editUser } from "../../hooks";
 import { useNavigate } from "react-router-dom";
-import { Json } from "sequelize/dist/lib/utils";
 
 function UserForm() {
   const navigate = useNavigate();
@@ -18,10 +17,7 @@ function UserForm() {
       titulo = "Editar Usuario";
       const respuesta = editUser(usuario);
       respuesta.then((res) => {
-        console.log("soy el res de respuesta de edit", res);
-
         if (res != undefined) {
-          console.log("ENTRE AL IF DEL UYSERFORM de edituser");
           window.alert("EDITADO CON EXITO");
           navigate("/");
         }
@@ -32,8 +28,6 @@ function UserForm() {
     const resultado = createUser(usuario);
     resultado.then((res) => {
       if (res != undefined) {
-        console.log("ENTRE AL IF DEL UYSERFORM");
-
         window.alert("CREADO CON EXITO");
         localStorage.removeItem("user");
         navigate("/");

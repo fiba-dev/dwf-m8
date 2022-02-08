@@ -6,12 +6,9 @@ import { Home } from "./pages/HomePage";
 import { LoadingWindows } from "./components/ui/loading-windows";
 import { RecoilRoot } from "recoil";
 import "mapbox-gl/dist/mapbox-gl.css";
-console.log("soy el boton");
-
 class index extends React.Component<any, any> {
   constructor(props) {
     super(props);
-    console.log("Soy el index.ts");
   }
 
   render() {

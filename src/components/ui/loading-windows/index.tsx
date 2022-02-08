@@ -1,9 +1,5 @@
 import React from "react";
-import { CloseButton, SessionButton } from "../buttons";
-import { IconMobile } from "../icons";
 import css from "./index.css";
-import { useNavigate } from "react-router-dom";
-import { useUserData } from "../../../hooks";
 import { Title2 } from "../text";
 
 function LoadingWindows(props) {

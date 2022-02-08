@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Button } from "../ui/buttons";
 
-import { Title } from "../ui/text";
 import css from "./index.css";
 function Search(props) {
   return (

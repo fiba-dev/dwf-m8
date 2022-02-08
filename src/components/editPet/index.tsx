@@ -1,16 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import css from "./index.css";
-import { useDropzone } from "react-dropzone";
-import { Title, Subtitle, Title2 } from "../ui/text";
+
+import { Subtitle, Title2 } from "../ui/text";
 import { TextField } from "../ui/text-field";
 import { Map } from "../map";
 import { DropboxImage } from "../setImage";
-import {
-  Button,
-  CancelButton,
-  FoundButton,
-  UnpublishButton,
-} from "../ui/buttons";
+import { Button, UnpublishButton } from "../ui/buttons";
 import {
   usePetData,
   reportPet,
@@ -21,8 +16,6 @@ import {
 } from "../../hooks";
 import { useNavigate } from "react-router-dom";
 
-let pictureURL = "http://127.0.0.1:8080/fe-src/components/img/picture.png";
-
 function EditPet(props) {
   const Navigator = useNavigate();
   let [resultado, setResultado] = useReportedPets();
@@ -31,9 +24,6 @@ function EditPet(props) {
   let petInfo = JSON.parse(localStorage.getItem("petData"));
   const handlerSubmit = (e) => {
     e.preventDefault();
-    console.log("soy E", e);
-
-    console.log("soy name", e.target.value);
 
     setPetData({
       id: petData.id,
@@ -63,13 +53,10 @@ function EditPet(props) {
   };
   const handlerReport = (e) => {
     e.preventDefault();
-    console.log("soy petData y reporto esto", petData);
+
     const resultado = editPet(petData);
     resultado.then((res) => {
-      console.log("soy resultado de report pet", res);
       if (res != undefined) {
-        console.log("Entre al if");
-
         window.alert("Editado con exito");
         getReportedPets("asd").then((response) => {
           setResultado(response);
@@ -77,11 +64,7 @@ function EditPet(props) {
         });
       }
     });
-    console.log("soy resultado");
   };
-  useEffect(() => {
-    console.log("PETDATA del edit", petData);
-  }, [petData]);
 
   return (
     <div className={css.container}>

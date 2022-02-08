@@ -10,10 +10,8 @@ function MobileMenu(props) {
   const [userData, setuserData] = useUserData();
   let login = "";
   let email = "";
-  let handlerLogin = "";
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log("USER DEL HEADER", user);
 
   if (user) {
     if (user.token != null && user.email != "") {
@@ -30,18 +28,14 @@ function MobileMenu(props) {
   const handlerSession = () => {
     if (user) {
       if (user.token != "" && user.email != "") {
-        console.log("borrando localstorage");
         localStorage.removeItem("user");
         setuserData({ email: "", token: "", password: "" });
         navigate("/");
       } else {
-        console.log("ENTRE EN EL PRIMER ELSE");
-
         navigate("/login/email");
       }
     } else {
       navigate("/login/email");
-      console.log("EN EL SEGUNDO ELSE");
     }
     props.cambiarEstado(!props.estado);
   };
@@ -98,9 +92,6 @@ function MobileMenu(props) {
       props.cambiarEstado(!props.estado);
     }
   };
-
-  console.log("Soy el estado del mobile menu", props.estado);
-
   return (
     <>
       {" "}

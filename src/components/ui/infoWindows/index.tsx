@@ -1,18 +1,12 @@
 import React from "react";
-import { CloseButton, SessionButton } from "../buttons";
-import { IconMobile } from "../icons";
+import { CloseButton } from "../buttons";
 import { Button } from "../buttons";
 import { TextField } from "../text-field";
 import { Title2 } from "../text";
 import css from "./index.css";
 import { useNavigate } from "react-router-dom";
-import { useUserData } from "../../../hooks";
 
 function InfoWindows(props) {
-  const navigate = useNavigate();
-
-  console.log("Soy el estadp windows", props);
-
   return (
     <>
       {" "}

@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import css from "./index.css";
 import { IconStart } from "../ui/icons/index";
 import { MenuButton } from "../ui/buttons/index";
-import { useReportedPets, useLoc, petCercanas } from "../../hooks";
+import { useReportedPets, petCercanas } from "../../hooks";
 import { MobileMenu } from "../ui/menu-mobile";
 import { DesktopMenu } from "../ui/menu-desktop";
 
 function setUbicacion(callback) {
-  // const [resultado,setResultado]=useReportedPets();
-  // console.log("Soy el primer log",resultado);
-
   navigator.geolocation.getCurrentPosition((res) => {
     const userLat = res.coords.latitude;
     const userLng = res.coords.longitude;
     const location = [userLat, userLng];
 
     localStorage.setItem("loc", JSON.stringify(location));
-    console.log(location);
+
     if (callback) {
       callback(location);
       return location;
@@ -33,11 +30,7 @@ function Header(props) {
 
   const goMenu = () => {
     setUbicacion((res) => {
-      console.log("Soy res antes de ir a pet cercanas", res);
-
       petCercanas(res).then((res) => {
-        console.log("soy resultado antes de ir a menu", res);
-
         setResultado(res);
         navigate("/");
       });

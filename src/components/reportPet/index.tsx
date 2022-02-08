@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import css from "./index.css";
-import { useDropzone } from "react-dropzone";
 import { Title, Subtitle } from "../ui/text";
 import { TextField } from "../ui/text-field";
 import { Map } from "../map";
@@ -11,12 +10,9 @@ import {
   reportPet,
   petCercanas,
   useReportedPets,
-  useLoc,
 } from "../../hooks";
 import { setUbicacion } from "../header/index";
-import { Navigate, useNavigate } from "react-router-dom";
-
-let pictureURL = "http://127.0.0.1:8080/fe-src/components/img/picture.png";
+import { useNavigate } from "react-router-dom";
 
 function ReportPet(props) {
   let [resultado, setResultado] = useReportedPets();
@@ -24,9 +20,6 @@ function ReportPet(props) {
   const Navigator = useNavigate();
   const handlerSubmit = (e) => {
     e.preventDefault();
-    console.log("soy E", e);
-
-    console.log("soy name", e.target.value);
     setPetData({
       id: petData.id,
       petName: e.target.value,
@@ -38,14 +31,8 @@ function ReportPet(props) {
   };
   const handlerCancel = (e) => {
     e.preventDefault();
-    console.log("entre en el cancel");
-
     setUbicacion((res) => {
-      console.log("Soy res antes de ir a pet cercanas", res);
-
       petCercanas(res).then((res) => {
-        console.log("soy resultado antes de ir a menu", res);
-
         setResultado(res);
         Navigator("/");
       });
@@ -53,20 +40,15 @@ function ReportPet(props) {
   };
   const handlerReport = (e) => {
     e.preventDefault();
-    console.log("soy petData y reporto esto", petData);
+
     const resultado = reportPet(petData);
     resultado.then((res) => {
       if (res == true) {
         window.alert("Reportado con exito");
         Navigator("/");
       }
-      console.log("soy resultado de report pet", res);
     });
-    console.log("soy resultado");
   };
-  useEffect(() => {
-    console.log("PETDATA", petData);
-  }, [petData]);
 
   return (
     <div className={css.container}>
