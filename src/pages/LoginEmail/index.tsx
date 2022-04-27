@@ -5,7 +5,11 @@ function LoginEmail() {
 	return (
 		<div>
 			{" "}
-			<meta name="Login Email"></meta> <InputEmail></InputEmail>
+			<meta
+				name="Login Email"
+				content="Ingresar el Email del usuario"
+			></meta>{" "}
+			<InputEmail></InputEmail>
 		</div>
 	);
 }

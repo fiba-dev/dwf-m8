@@ -5,7 +5,10 @@ function LoginPassword() {
 	return (
 		<div>
 			{" "}
-			<meta name="Login password"></meta>
+			<meta
+				name="Login password"
+				content="Ingresar el Password del usuario"
+			></meta>
 			<InputPassword></InputPassword>
 		</div>
 	);

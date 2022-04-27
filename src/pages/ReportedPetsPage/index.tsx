@@ -6,7 +6,10 @@ import { ReportedPets } from "../../components/reportedPets";
 function ReportedPetsPage() {
 	return (
 		<div>
-			<meta name="Mascotas Reportadas por el usuario"></meta>
+			<meta
+				name="Mascotas Reportadas por el usuario"
+				content="Ver mascotas reportadas por el usuario"
+			></meta>
 			<ReportedPets></ReportedPets>
 		</div>
 	);

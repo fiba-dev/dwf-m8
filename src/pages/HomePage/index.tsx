@@ -4,7 +4,7 @@ import { NearbyPets } from "../../components/nearbyPets";
 function Home() {
 	return (
 		<div>
-			<meta name="Pagina principal Mascotas Perdidas"></meta>
+			<meta name="Home Page" content="Pagina Principal"></meta>
 			<NearbyPets></NearbyPets>
 		</div>
 	);

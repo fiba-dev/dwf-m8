@@ -4,7 +4,7 @@ import { EditPet } from "../../components/editPet";
 function ReNearbyPetsPage() {
 	return (
 		<div>
-			<meta name="Editar datos de mascotas perdidas"></meta>
+			<meta name="Edit Pet" content="Editar datos de mascotas perdidas"></meta>
 			<EditPet></EditPet>
 		</div>
 	);
