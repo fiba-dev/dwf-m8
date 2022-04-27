@@ -4,11 +4,12 @@ import { Title } from "../../components/ui/text";
 import { ReportedPets } from "../../components/reportedPets";
 
 function ReportedPetsPage() {
-  return (
-    <div>
-      <ReportedPets></ReportedPets>
-    </div>
-  );
+	return (
+		<div>
+			<meta name="Mascotas Reportadas por el usuario"></meta>
+			<ReportedPets></ReportedPets>
+		</div>
+	);
 }
 
 export { ReportedPetsPage };
